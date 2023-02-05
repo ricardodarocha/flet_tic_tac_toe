@@ -3,12 +3,12 @@
   <br>
   <a href="http://www.ricardodarocha.com.br"><img src="https://icons.iconarchive.com/icons/ph03nyx/super-mario/256/Retro-Coin-icon.png" alt="Markdownify" width="200"></a>
   <br>
-  designed by Ricardo da Rocha
+  tic tac toe #
   <br>
 </h1>
 
 <h4 align="center">
-Este Sidebar com Python usa a biblioteca <a href="https://flet.dev/" target="_blank">Flet</a>.</h4> é a base de vários projetos de Interface do Usuário que eu estou desenvolvendo 
+Esta versão de jogo da velha foi desenvolvido com a biblioteca Flet
 
 <p align="center">
 </p>
@@ -23,7 +23,7 @@ Este Sidebar com Python usa a biblioteca <a href="https://flet.dev/" target="_bl
 </p>
 
 <p align="center">
-<img src="https://github.com/ricardodarocha/sidebar/blob/master/img/sidebar.gif">
+<img src="https://camo.githubusercontent.com/9f347776bb8d847721acbef55e5308b239877cc5cbf55e12b48073adcad9d546/68747470733a2f2f7468756d62732e6766796361742e636f6d2f5468616e6b66756c4e6172726f77436f6d6d61627574746572666c792d73697a655f726573747269637465642e676966">
 </p>
 
 ## Introdução
