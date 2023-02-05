@@ -32,16 +32,16 @@ Uma aplicação desktop fica melhor organizada com uma sidebar, uma barra latera
 
 ## Como usar
 
-Clone este repositório [Git](https://github.com/ricardodarocha/sidebar.git) 
+Clone este repositório [Git](https://github.com/ricardodarocha/flet_tic_tac_toe.git) 
 Rode o comando `pip install flet`
 Em seguida rode o programa usando flet CLI
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/ricardodarocha/sidebar.git
+$ git clone https://github.com/ricardodarocha/flet_tic_tac_toe.git
 
 # Go into the repository
-$ cd sidebar
+$ cd flet_tic_tac_toe
 
 # Abra com VSCode
 $ code .
@@ -64,9 +64,6 @@ Caso necessite de suporte ou queira personalizar este projeto você pode entrar 
 This software uses the following open source packages:
 
 - [Flet](flet.dev)
-
-This was based in video from Line Indent
-- [Line Indent Youtube Chanel](https://www.youtube.com/watch?v=lu1obAGKxmE)
 
 ## Related
 
