@@ -1,28 +1,63 @@
-import flet as ft
+import flet
 
-def main(page): 
-    def on_keyboard(e: ft.KeyboardEvent):
-        page.add(
-            ft.Text(
-                f"Key: {e.key}, Shift: {e.shift}, Control: {e.ctrl}, Alt: {e.alt}, Meta: {e.meta}"
-            )
-        )
+piece = "img/circle.jpg"
 
-    page.on_keyboard_event = on_keyboard
-    page.add(
-        ft.Text("Pressione qualquer tecla com CTRL, ALT, SHIFT ...")
-    )
-    def btn_click(e):
-        if not txt_name.value:
-            txt_name.error_text = "Qual o seu nome?"
-            page.update()
+def main(page: flet.Page):
+    page.title = "Tic Tac Toe with Flet"
+    page.theme_mode = flet.ThemeMode.DARK
+    page.padding = 50
+    page.update()
+
+    grade = flet.GridView(
+        expand=1,
+        runs_count=5,
+        max_extent=150,
+        child_aspect_ratio=1.0,
+        spacing=12,
+        run_spacing=12,
+    )      
+
+    page.add(grade)
+    page.window_width = 600
+    page.window_height = 625
+
+    def switch(piece: str):
+        piece
+        if piece == "img/circle.jpg":
+            piece = "img/mark.jpg"
         else:
-            name = txt_name.value
-            page.clean()
-            page.add(ft.Text(f"Hello, {name}!"))
+            piece = "img/circle.jpg"
+        return piece
 
-    txt_name = ft.TextField(label="Your name")
+    def clicou(e):
+        print("clicou", e.control.data)
+        if grade.controls[e.control.data].content.src != f"img/none.jpg":
+            print("(Recusado) clicou", e.control.data)
+            return
+        global piece
+        grade.controls[e.control.data].content.src = piece
+        piece = switch(piece)
+        grade.controls[e.control.data].content.update()
 
-    page.add(txt_name, ft.ElevatedButton("Say hello!", on_click=btn_click))
+    for i in range(0, 9):
+        grade.controls.append(
+            flet.Container(
+                alignment=flet.alignment.center,
+                width=150,
+                height=150,
+                border_radius=10,
+                ink=True,
+                data=i,
+                on_click=lambda e: clicou(e),
+                content=flet.Image(
+                    src=f"img/none.jpg",
+                    # src=f"img/circle.jpg",
+                    # src=f"img/mark.jpg",
+                    fit=flet.ImageFit.NONE,
+                    repeat=flet.ImageRepeat.NO_REPEAT,
+                    border_radius=flet.border_radius.all(11),
+                ),
+        ))
+    page.update()
 
-ft.app(target=main)
+flet.app(target=main, view=flet.WEB_BROWSER)
